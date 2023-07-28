@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.note_paper {
+  min-width: 200px;
+  max-width: 500px;
+  background-color: #55a598;
+  .note_options {
+    width: 100%;
+    height: 30px;
+    background-color: green;
+    display: flex;
+    align-items: center;
+
+    .btns {
+      margin-left: 5px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+    .btnx {
+      background-color: red;
+    }
+    .btn- {
+      background-color: yellow;
+    }
+    .btnm {
+      background-color: rgb(39, 216, 39);
+    }
+  }
+}
+.btns {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.btns {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.btns {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.btns {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.none {
+  display: none;
+}
+.note_body {
+  display: block;
+  width: 100%;
+  min-height: 220px;
+  max-height: 100vh;
+  textarea {
+    display: block;
+    min-height: 220px;
+    width: 100%;
+    background-color: #55a598;
+  }
+}
