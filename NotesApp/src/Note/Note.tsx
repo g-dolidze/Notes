@@ -3,7 +3,7 @@ import Notes from "../Components/Notes";
 import "./Note.scss";
 import styled from "styled-components";
 interface Note {
-  // show: boolean;
+  show: true;
   // input: string;
   top: any;
   right: any;
@@ -11,15 +11,11 @@ interface Note {
 
 const App = () => {
   const [notes, setNotes] = useState<Note[]>([]);
-  const [show, setShow] = useState<boolean>(true);
 
   const addNote = () => {
     setNotes((prevNotes) => [
       ...prevNotes,
-      {
-        top: getRandomPosition(),
-        right: getRandomPosition(),
-      },
+      { show: true, top: getRandomPosition(), right: getRandomPosition() },
     ]);
   };
   const Note = styled.li`
@@ -32,11 +28,13 @@ const App = () => {
     let max = 90;
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
-  console.log(notes);
 
-  const hidden = () => {
-    setShow((prevShow) => !prevShow);
-    // setNotes(prevNotes =>prevNotes)
+  const hidden = (i: number) => {
+    setNotes((prevNotes) =>
+      prevNotes.map((note, index) =>
+        index === i ? { ...note, show: !note.show } : note
+      )
+    );
   };
 
   const deleteNote = (index: number) => {
@@ -57,7 +55,9 @@ const App = () => {
               setNotes={addNote}
               deleteNote={() => deleteNote(index)}
               hidden={hidden}
-              show={show}
+              notes={notes}
+              i={index}
+              show={false}
             />
           </Note>
         ))}
